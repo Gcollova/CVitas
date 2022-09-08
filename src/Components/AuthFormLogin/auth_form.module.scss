@@ -1,0 +1,97 @@
+.main{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(2,0,36);
+    background: linear-gradient(158deg, rgba(2,0,36,1) 0%, rgba(227,51,133,1) 0%, rgba(251,233,121,1) 100%);
+    letter-spacing: 1px;
+    ._wrapper{
+        height: 600px;
+        width: 800px;
+        
+        display: flex;
+        justify-content: center;
+        
+        .__formWrapper{
+            width: 100%;
+            color: #ffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            h2{
+                font-size: 35px;
+                color: rgb(63, 63, 63);;
+            }
+            .___inputWrapper{
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                width: 300px;
+                input{
+                    padding: 9px 12px;
+                    
+                    border: none;
+                    outline: none;
+                    background-color: rgba(216, 216, 216, 0.479);
+                    border-radius: 2px;
+                    color: rgb(63, 63, 63);
+                    &::placeholder{
+                        color: #4e2323;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+            .___recoverPassword{
+                width: 300px;
+                color: #4e2323d0;
+                margin-top: 15px;
+                display: flex;
+                justify-content: right;
+                p{
+                    font-size: 11px;
+                    
+                    &:hover{
+                        text-decoration: underline;
+                        
+                        cursor: pointer;
+                        text-underline-offset: 3px;
+                    }
+                }
+            }
+            .___buttonWrapper{
+                width: 300px;
+                margin-top: 15px;
+                button{
+                    cursor: pointer;
+                    color: #f5b97c;
+                    letter-spacing: 1px;
+                    font-size: 18px;
+                    border: none;
+                    border-radius: 2px;
+                    width: 100%;
+                    height: 40px;
+                    background-color: #ac4250;
+                }
+            }
+            .___signupWrapper{
+                margin-top: 30px;
+                span{
+                    color: #4e2323d0;
+                    cursor: pointer;
+                    &:hover{
+                        text-decoration: underline;
+                        text-underline-offset: 3px;
+                    }
+                }
+            }
+            
+            
+        }
+    }
+}
+// #C1C4C1 #DE8E00 #232323

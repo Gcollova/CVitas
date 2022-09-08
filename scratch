@@ -1,0 +1,29 @@
+// function writeUserData(userID: string, name:string, email:string){
+  //   const db = getDatabase(app);
+  //   set(ref(db, 'users/' + userID),{userID:'ciao'})
+  // }
+  // useMemo(() => writeUserData('1234','ciao','ciao@ciao.it'), [])
+
+  // function readUserData(userID:string){
+
+  //   const dbRef = ref(getDatabase());
+  //   get(child(dbRef, `users`)).then((snapshot) => {
+  //     if (snapshot.exists()) {
+  //       console.log(snapshot.val());
+  //     } else {
+  //       console.log("No data available");
+  //     }
+  //   }).catch((error) => {
+  //     console.error(error);
+  //   });
+
+  // }
+  // useMemo(() => readUserData("1234"), [])
+
+  // function deleteUserData(userID:string){
+
+  //   const dbRef = ref(getDatabase());
+  //   remove(child(dbRef, `users/${userID}`)).then(()=>{console.log('eliminato')}).catch((err)=> console.log(err))
+
+  // }
+  // useMemo(() => deleteUserData("1234"), [])
