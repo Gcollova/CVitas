@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../../Context/firebase_context";
 import { Login, loginModel} from "../../models/auth_credential";
+import { UserStatus } from "../../models/user_status";
 import { CurrentForm } from "../../Pages/Login";
 import { userLogin } from "../../services/user_login";
 import styles from './auth_form.module.scss'
@@ -15,13 +16,13 @@ const AuthFormLogin = (props:{setCurrentForm:React.Dispatch<React.SetStateAction
      // CONTEXT
      const {setFirebaseUser, firebaseUser} = useGlobalContext();
 
-     // MISC HOOKS DECLARATIONS
+     // MISC HOOKS DECLAREMENTS
      const navigate = useNavigate();
 
     // USE STATE DECLARATION
     const [credentials,setCredentials] = useState<Login>(loginModel);
 
-    // USE MEMO DECLARATIONS
+    // USE MEMO DECLAREMENTS
     useMemo(() => firebaseUser && navigate('/') , [firebaseUser,navigate])
 
 
@@ -29,7 +30,13 @@ const AuthFormLogin = (props:{setCurrentForm:React.Dispatch<React.SetStateAction
     const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         let result = await userLogin({email:credentials.email,password:credentials.password});
-        setFirebaseUser(result);
+        if(result.user){
+
+            setFirebaseUser({user:result.user,status:UserStatus.loaded});
+        } else{
+            alert(result.error.message)
+        }
+        
     }
 
     return(
