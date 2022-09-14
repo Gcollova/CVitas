@@ -35,6 +35,7 @@ const AuthFormSignup = (props:{setCurrentForm:React.Dispatch<React.SetStateActio
             if(result.user){
 
                 setFirebaseUser({user:result.user,status:UserStatus.loaded});
+                navigate('/')
             } else {
                 alert(result.error.message)
             }
