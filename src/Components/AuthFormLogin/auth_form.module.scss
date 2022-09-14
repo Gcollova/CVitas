@@ -4,8 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(2,0,36);
-    background: linear-gradient(158deg, rgba(2,0,36,1) 0%, rgba(227,51,133,1) 0%, rgba(251,233,121,1) 100%);
+    background: rgb(227,51,51);
+    background: linear-gradient(90deg, rgba(227,51,51,0.9079831761806285) 0%, rgba(251,175,121,0.9275910193178833) 100%); 
     letter-spacing: 1px;
     ._wrapper{
         height: 600px;
@@ -24,7 +24,7 @@
             
             h2{
                 font-size: 35px;
-                color: rgb(63, 63, 63);;
+                color: #ffff;
             }
             .___inputWrapper{
                 margin-top: 20px;
@@ -39,7 +39,7 @@
                     outline: none;
                     background-color: rgba(216, 216, 216, 0.479);
                     border-radius: 2px;
-                    color: rgb(63, 63, 63);
+                    color: #FFFF;
                     &::placeholder{
                         color: #4e2323;
                         letter-spacing: 1px;
@@ -68,7 +68,8 @@
                 margin-top: 15px;
                 button{
                     cursor: pointer;
-                    color: #f5b97c;
+                    
+                    color: #ffff;
                     letter-spacing: 1px;
                     font-size: 18px;
                     border: none;
@@ -76,6 +77,8 @@
                     width: 100%;
                     height: 40px;
                     background-color: #ac4250;
+                    transition: all 0.2s ease;
+                    &:hover{color: #f5b97c;}
                 }
             }
             .___signupWrapper{

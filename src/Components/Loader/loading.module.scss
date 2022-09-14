@@ -1,0 +1,14 @@
+.main{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+    background: rgb(227,51,51);
+    background: linear-gradient(90deg, rgba(227,51,51,0.9079831761806285) 0%, rgba(251,175,121,0.9275910193178833) 100%);
+    p{
+        font-size: 50px;
+        color: #ffff;
+    }
+}

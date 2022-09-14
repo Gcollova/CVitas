@@ -1,0 +1,220 @@
+.main{
+    min-height: 100vh;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+    background: rgb(227,51,51);
+    background: linear-gradient(90deg, rgba(227,51,51,0.9079831761806285) 0%, rgba(251,175,121,0.9275910193178833) 100%); 
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    
+    ._addInfo{
+        display: flex;
+        gap: 30px;
+        width: calc(80% + 60px );
+        max-width: 1000px;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+        position: absolute;
+        top: 100px;
+        p{
+            color: #ffff;
+            transition: all 0.2s ease;
+            text-decoration: underline transparent;
+            text-underline-offset: 5px;
+            &:hover{
+                cursor: pointer;
+                text-decoration-color: #ffff;
+                
+                
+
+                
+            }
+        }
+        
+        
+    }
+    ._wrapper{
+        
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 150px;
+        margin-bottom: 20px;
+        
+        .__mainInfoWrapper{
+            position: relative;
+            width: 80%;
+            max-width: 1000px;
+            min-height: 20%;
+            background-color: rgba(255, 255, 255, 0.452);
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            color: #4e2323d0;
+            padding: 30px;
+            gap: 20px;
+            .___comeBack{
+                position: absolute;
+                right: 24px;
+                top: 30px;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                text-decoration: underline transparent;
+                text-underline-offset: 5px;
+                &:hover{
+                cursor: pointer;
+                text-decoration-color: #4e2323;
+                
+                
+
+                
+            }
+            }
+            .___wrapper{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                width: 100%;
+                gap: 20px;
+                h2{
+                    font-weight:700 !important;
+                    font-size: 18px;
+                }
+                .____description,.____skills{
+                    position: relative;
+                    background-color: #aeeec7;
+                    border-radius: 5px;
+                    padding: 30px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    
+                    gap: 10px;
+                    width: 100%;
+                    p{
+                        width: 49%;
+                    }
+                    .expDescription{
+                        width: 100% !important;
+                        position: relative;
+                        span{
+                            font-weight: 700;
+                            cursor: pointer;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                        }
+                    }
+                }
+                .____skills{
+                    background-color: #aec2ee;
+                }
+                
+                
+                
+            }
+            .___wrapperInput{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                width: 100%;
+                gap: 5px;
+                .____counter{
+                    position: absolute;
+                    right: 0px;
+                    font-size: 10px;
+                }
+                
+                
+                input,select,textarea{
+                    width: calc(50% - 24px);
+                    padding: 9px 12px;
+                    
+                    border: none;
+                    outline: none;
+                    background-color: rgba(216, 216, 216, 0.479);
+                    border-radius: 2px;
+                    color: #ffff;
+                    &::placeholder{
+                        color: #4e2323;
+                        letter-spacing: 1px;
+                    }
+                }
+                textarea{
+                    width: calc(100% - 24px) ;
+                    height: 150px;
+                    resize:none;
+                    
+                }
+            }
+            .___buttonWrapper{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 15px;
+                button{
+                    cursor: pointer;                    
+                    color: #ffff;
+                    letter-spacing: 1px;
+                    font-size: 18px;
+                    border: none;
+                    border-radius: 2px;
+                    width: 300px;
+                    height: 40px;
+                    background-color: #ac4250;
+                    transition: all 0.2s ease;
+                    &:hover{color: #f5b97c;}
+                }
+            }
+        }
+    }
+    ._buttonWrapper{
+        width: 100%;
+        display: flex;
+        max-width: 1000px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+        gap: 30px;
+        padding: 30px;
+        button{
+            cursor: pointer;                    
+            color: #ffff;
+            letter-spacing: 1px;
+            font-size: 18px;
+            border: none;
+            border-radius: 2px;
+            width: 150px;
+            height: 40px;
+            background-color: #ac4250;
+            transition: all 0.2s ease;
+            &:hover{color: #f5b97c;}
+        }
+    }
+    ._publicLink{
+        padding: 30px;
+        p{
+            color: #4e2323;
+            span{
+                color: #ffff;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    
+}
+
+.hidden{
+    position: absolute;
+    left: -3000px !important;
+    transition: all 0.3s ease;
+}
