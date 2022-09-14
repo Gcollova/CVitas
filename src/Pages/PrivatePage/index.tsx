@@ -22,7 +22,7 @@ const PrivatePage = () => {
     useEffect(() => {
       !privatePage 
       && getPage(pageID!,setPrivatePage)
-    }, [])
+    }, [pageID,privatePage])
     
 
     return(

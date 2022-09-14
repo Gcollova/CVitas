@@ -29,7 +29,7 @@ export  function firebaseUserObserver(
         // ...
     } else {
         setFirebaseUSer({user:undefined,status: UserStatus.notLogged});
-        
+        console.log('not logged')
         // User is signed out
         // ...
     }

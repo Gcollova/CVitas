@@ -1,39 +1,31 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import Loader from "../../Components/Loader";
-import { useGlobalContext } from "../../Context/firebase_context";
-import { SharebalePages } from "../../models/shareable_pages";
-import { pageDbGET } from "../../services/pages_db_get";
+import React, {  useMemo, useState } from 'react'
+import { useParams } from 'react-router-dom';
+import Loader from '../../Components/Loader';
+import PublicPageComponent from '../../Components/PublicPageComponent'
+import { PublicPage } from '../../models/public_page'
+import { publicPageGET } from '../../services/public_page_get';
 
 
-const PublicPage = () => {
-    
-
+const Public = () => {
     // USE STATE DECLAREMENTS
-    const [publicPage,setPublicPage] = useState<SharebalePages | undefined>(undefined)
-
-    // MISC HOOK DECLAREMENTS
-    const {pageID} = useParams();
-
-    // USE EFFECT DECLAREMENTS
-    useEffect(() => {
-      !publicPage 
-      && getPage(pageID!,setPublicPage)
+    const [publicPage,setPublicPage]= useState<PublicPage | undefined>(undefined);
+    // MISC HOOKS DECLAREMENTS
+    const {shareID} = useParams();
+    useMemo(async () => {
+        let result:PublicPage | undefined = await publicPageGET(shareID!)
+        setPublicPage(result)
     }, [])
     
-
     return(
-        publicPage 
-        ?   <div>{publicPage.id}</div>
-        : <Loader/>
+        <>
+        {
+            publicPage 
+            ? <PublicPageComponent publicPage={publicPage}/>
+            : <Loader/>
+        }
+        </>
+        
     )
 }
 
-export default PublicPage;
-
-async function getPage(pageID: string,setPublicPage: React.Dispatch<React.SetStateAction<SharebalePages | undefined>>){
-
-   let result = await pageDbGET(pageID);
-   setPublicPage(result);
-
-}
+export default Public;

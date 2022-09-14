@@ -43,6 +43,6 @@ export interface Experience{
     place:          string,
     description:    string,
     from:           number,
-    to:             number,
-    inProgress:     boolean,
+    to?:             number,
+    inProgress?:     boolean,
 }

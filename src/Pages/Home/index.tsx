@@ -12,13 +12,13 @@ const Home = () => {
     
     // CONTEXT
     const { firebaseUser, user } = useGlobalContext();
-
+    console.log(firebaseUser)
 
     return(
         <>
             {
                 firebaseUser.status === UserStatus.loading 
-                ||  (user === undefined && firebaseUser.status !== UserStatus.firstAccess)
+                ||  (user === undefined && firebaseUser.status !== UserStatus.notLogged)
                 ?   <Loader/>
                 :   firebaseUser.status === UserStatus.firstAccess
                 ?   <FirstAccess/>

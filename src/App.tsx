@@ -10,8 +10,10 @@ import Home from './Pages/Home';
 import { UserStatus } from './models/user_status';
 import { UserEntity } from './models/user_entity';
 import { userDbGET } from './services/user_db_get';
-import PublicPage from './Pages/PublicPage';
+
 import PrivatePage from './Pages/PrivatePage';
+import Public from './Pages/PublicPage';
+import PrivateShareComponent from './Components/PrivateShareComponent';
 
 
 
@@ -40,7 +42,7 @@ function App() {
     && firebaseUser?.status === UserStatus.loaded
     &&  setUserHandler(firebaseUser.user?.uid!,setUser)
 
-  }, [auth,firebaseUser])
+  }, [auth,firebaseUser,user])
   
 
   
@@ -62,10 +64,13 @@ function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/public'>
-              <Route path=':pageID' element={<PublicPage/>}/>
+              <Route path=':shareID' element={<Public/>}/>
+            </Route>
+            <Route path=':userID'>
+              <Route path=':pageID' element={<PrivatePage/>}/>
             </Route>
             <Route path='/private'>
-              <Route path=':pageID' element={<PrivatePage/>}/>
+              <Route path=':shareID' element={<PrivateShareComponent/>}/>
             </Route>
           </Routes>
         
