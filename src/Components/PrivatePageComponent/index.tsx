@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useMemo, useState } from "react";
 import { useGlobalContext } from "../../Context/firebase_context";
 
@@ -42,6 +43,7 @@ const PrivatePageComponent = () =>{
     useMemo(() => 
         skill.skillDescription.length > 100 
         && setSkill({...skill,skillDescription:skill.skillDescription.substring(0,100)})
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     , [skill.skillDescription])
     // EXPERIENCES MANAGER
     useMemo(() => 

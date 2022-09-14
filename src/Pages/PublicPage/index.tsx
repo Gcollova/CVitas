@@ -14,6 +14,7 @@ const Public = () => {
     useMemo(async () => {
         let result:PublicPage | undefined = await publicPageGET(shareID!)
         setPublicPage(result)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
     return(

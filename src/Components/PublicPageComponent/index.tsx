@@ -30,7 +30,7 @@ const PublicPageComponent = (props:{publicPage:PublicPage}) =>{
 
 
     // VARIABLE DECLAREMENTS
-    const date = new Date(publicPage?.user.birthDay!);    
+      
     const getAge = Math.floor((new Date().valueOf()- new Date(publicPage?.user.birthDay!).getTime()) / 3.15576e+10);
 
     // HANDLING SUBMISSION 
