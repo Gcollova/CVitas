@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../../Context/firebase_context";
 import { SignUp, signUpModel } from "../../models/auth_credential";
+import { UserStatus } from "../../models/user_status";
 import { CurrentForm } from "../../Pages/Login";
 import { userSignup } from "../../services/user_signup";
 import styles from './auth_form.module.scss'
@@ -15,13 +16,13 @@ const AuthFormSignup = (props:{setCurrentForm:React.Dispatch<React.SetStateActio
     // CONTEXT
     const {setFirebaseUser, firebaseUser} = useGlobalContext();
 
-    // MISC HOOKS DECLARATIONS
+    // MISC HOOKS DECLAREMENTS
     const navigate = useNavigate();
         
-    // USE STATE DECLARATIONS
+    // USE STATE DECLAREMENTS
     const [credentials,setCredentials] = useState<SignUp>(signUpModel);
 
-    // USE MEMO DECLARATIONS
+    // USE MEMO DECLAREMENTS
     useMemo(() => firebaseUser && navigate('/') , [firebaseUser,navigate])
 
 
@@ -31,7 +32,12 @@ const AuthFormSignup = (props:{setCurrentForm:React.Dispatch<React.SetStateActio
         e.preventDefault();
         if(credentials.password === credentials.checkPassword){
             let result = await userSignup({email:credentials.email,password:credentials.password});
-            setFirebaseUser(result);
+            if(result.user){
+
+                setFirebaseUser({user:result.user,status:UserStatus.loaded});
+            } else {
+                alert(result.error.message)
+            }
             
         } else {
             alert('Password do not Match');
